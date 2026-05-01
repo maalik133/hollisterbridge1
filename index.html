@@ -7,46 +7,61 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
-body{background:#f5f5f5;color:#111}
+body{background:#f3f6fb;color:#101827}
+.page{max-width:420px;margin:0 auto;padding:24px 14px 40px}
 
-.page{max-width:420px;margin:0 auto;padding:20px 14px 40px}
-
-.top{display:flex;justify-content:space-between;margin-bottom:10px}
-
-.badge{
-  background:#eee;
-  padding:8px 14px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:14px;
+.logo{
+  text-align:center;
+  color:#17213b;
+  font-weight:900;
+  font-size:34px;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+.bird{
+  display:block;
+  font-size:28px;
+  line-height:18px;
+  transform:rotate(-4deg);
 }
 
-.progress{
-  height:6px;
-  background:#ddd;
-  border-radius:999px;
-  overflow:hidden;
-  margin:12px 0 18px;
-  position:sticky;
-  top:0;
-  z-index:10;
+.gift-card{
+  background:#2366a9;
+  color:white;
+  border-radius:18px;
+  height:170px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  margin:0 auto 24px;
+  box-shadow:0 16px 35px rgba(35,102,169,.22);
 }
-
-.bar{
-  width:0%;
-  height:100%;
-  background:#111;
-  transition:width .2s ease;
+.gift-card .inside{
+  font-size:34px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+.gift-card .inside span{
+  display:block;
+  font-size:28px;
+  line-height:20px;
 }
 
 h1{
-  font-size:26px;
+  font-size:32px;
+  line-height:1.15;
   font-weight:900;
-  margin-bottom:10px;
-  line-height:1.2;
+  margin-bottom:12px;
+  text-align:left;
 }
 
-.sub{color:#666;font-size:15px;margin-bottom:20px}
+.sub{
+  color:#5f6673;
+  font-size:18px;
+  line-height:1.45;
+  margin-bottom:22px;
+}
 
 .card{
   background:#fff;
@@ -56,75 +71,78 @@ h1{
   display:flex;
   gap:12px;
   align-items:flex-start;
-  border:1px solid #eee;
+  border:1px solid #d9dde5;
+  box-shadow:0 8px 22px rgba(15,23,42,.04);
 }
 
 .check{
-  background:#111;
+  background:#17213b;
   color:#fff;
-  width:28px;
-  height:28px;
+  width:32px;
+  height:32px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
   font-weight:900;
-  font-size:14px;
   flex-shrink:0;
 }
 
-.card h3{font-size:16px;margin-bottom:4px}
-.card p{font-size:13px;color:#666}
+.card h3{font-size:18px;margin-bottom:5px}
+.card p{font-size:15px;color:#666;line-height:1.35}
 
 .info{
   background:#fff;
   border-radius:18px;
-  padding:16px;
-  margin:14px 0;
-  border:1px solid #eee;
+  padding:18px;
+  margin:16px 0;
+  border:1px solid #d9dde5;
 }
 
-.info h3{font-size:16px;margin-bottom:6px}
-.info p{font-size:14px;color:#666}
+.info h3{font-size:19px;margin-bottom:8px}
+.info p{font-size:16px;color:#666;line-height:1.45}
 
 .cta{
   display:block;
   width:100%;
-  background:#111;
+  background:#17213b;
   color:#fff;
   text-align:center;
-  padding:16px;
+  padding:18px;
   border-radius:999px;
-  font-size:18px;
+  font-size:20px;
   font-weight:900;
   text-decoration:none;
-  margin-top:12px;
+  margin-top:14px;
+  box-shadow:0 14px 28px rgba(23,33,59,.18);
 }
 
-.note{text-align:center;font-size:12px;color:#777;margin-top:10px}
+.note{text-align:center;font-size:13px;color:#777;margin-top:12px}
 
 .faq{
   background:#fff;
   border-radius:18px;
   padding:16px;
-  margin-top:20px;
+  margin-top:24px;
+  border:1px solid #d9dde5;
 }
 
-.faq h2{margin-bottom:12px}
+.faq h2{font-size:24px;margin-bottom:14px}
 
 .faq-item{
-  border:1px solid #eee;
-  border-radius:12px;
+  border:1px solid #d9dde5;
+  border-radius:14px;
   margin-bottom:10px;
   overflow:hidden;
 }
 
 .faq-q{
   width:100%;
-  padding:14px;
+  padding:15px;
   border:none;
   background:#fff;
-  font-weight:700;
+  font-weight:800;
+  font-size:15px;
   text-align:left;
   display:flex;
   justify-content:space-between;
@@ -133,12 +151,21 @@ h1{
 
 .faq-a{
   display:none;
-  padding:0 14px 14px;
-  font-size:13px;
+  padding:0 15px 15px;
+  font-size:14px;
   color:#555;
+  line-height:1.4;
 }
 
 .faq-item.active .faq-a{display:block}
+
+.disclaimer{
+  color:#8b8f99;
+  font-size:11px;
+  line-height:1.45;
+  text-align:center;
+  margin-top:18px;
+}
 </style>
 </head>
 
@@ -146,104 +173,93 @@ h1{
 
 <div class="page">
 
-<div class="top">
-  <div class="badge">Step 1 of 2</div>
-  <div class="badge">$500 Gift Card</div>
-</div>
-
-<div class="progress">
-  <div class="bar" id="progressBar"></div>
-</div>
-
-<h1>Check Your $500 Hollister Gift Card</h1>
-
-<p class="sub">This quick page explains what to expect on the next step.</p>
-
-<div class="card">
-  <div class="check">✓</div>
-  <div>
-    <h3>Complete 4–5 required deals</h3>
-    <p>Includes app installs, surveys, or trial offers.</p>
+  <div class="logo">
+    <span class="bird">〰</span>
+    HOLLISTER
   </div>
-</div>
 
-<div class="card">
-  <div class="check">✓</div>
-  <div>
-    <h3>Use a valid email address</h3>
-    <p>Used for updates and tracking your progress.</p>
+  <div class="gift-card">
+    <div class="inside">
+      <span>〰</span>
+      HOLLISTER
+    </div>
   </div>
-</div>
 
-<div class="card">
-  <div class="check">✓</div>
-  <div>
-    <h3>Must be 18+ to participate</h3>
-    <p>Eligibility and offer paths may vary by user.</p>
+  <h1>Claim your $500 Hollister Gift Card</h1>
+
+  <p class="sub">This quick page explains what to expect on the next step.</p>
+
+  <div class="card">
+    <div class="check">✓</div>
+    <div>
+      <h3>Complete 4–5 required deals</h3>
+      <p>Includes app installs, surveys, or trial offers.</p>
+    </div>
   </div>
-</div>
 
-<div class="info">
-  <h3>What happens next?</h3>
-  <p>You’ll continue to the next page to begin completing the required steps.</p>
-</div>
+  <div class="card">
+    <div class="check">✓</div>
+    <div>
+      <h3>Use a valid email address</h3>
+      <p>Used for updates and tracking your progress.</p>
+    </div>
+  </div>
 
-<p class="sub" style="text-align:center;">Tap below to continue and start the steps.</p>
+  <div class="card">
+    <div class="check">✓</div>
+    <div>
+      <h3>Must be 18+ to participate</h3>
+      <p>Eligibility and offer paths may vary by user.</p>
+    </div>
+  </div>
 
-<a href="https://giftclick.org/aff_c?offer_id=2768&aff_id=170653" class="cta">Continue to Next Step →</a>
+  <div class="info">
+    <h3>What happens next?</h3>
+    <p>You’ll continue to the next page to begin completing the required steps.</p>
+  </div>
 
-<p class="note">Eligibility and completion requirements apply.</p>
+  <p class="sub" style="text-align:center;margin-bottom:0;">Tap below to continue and start the steps.</p>
 
-<div class="faq">
-<h2>Frequently Asked Questions</h2>
+  <a href="YOUR_LINK_HERE" class="cta">Continue to Next Step →</a>
 
-<div class="faq-item">
-  <button class="faq-q">How long do the deals take? <span>+</span></button>
-  <div class="faq-a">Most deals only take a few minutes to begin.</div>
-</div>
+  <p class="note">Eligibility and completion requirements apply.</p>
 
-<div class="faq-item">
-  <button class="faq-q">What are deals? <span>+</span></button>
-  <div class="faq-a">Deals are simple offers or tasks you complete as part of the process.</div>
-</div>
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
 
-<div class="faq-item">
-  <button class="faq-q">How many deals do I have to do? <span>+</span></button>
-  <div class="faq-a">Typically 4–5 deals are required.</div>
-</div>
+    <div class="faq-item">
+      <button class="faq-q">How long do the deals take? <span>+</span></button>
+      <div class="faq-a">Most deals only take a few minutes to begin.</div>
+    </div>
 
-<div class="faq-item">
-  <button class="faq-q">When will I receive my reward? <span>+</span></button>
-  <div class="faq-a">Reward timing varies after completing all steps.</div>
-</div>
+    <div class="faq-item">
+      <button class="faq-q">What are deals? <span>+</span></button>
+      <div class="faq-a">Deals are simple offers or tasks you complete as part of the process.</div>
+    </div>
 
-</div>
+    <div class="faq-item">
+      <button class="faq-q">How many deals do I have to do? <span>+</span></button>
+      <div class="faq-a">Typically 4–5 deals are required.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">When will I receive my reward? <span>+</span></button>
+      <div class="faq-a">Reward timing varies after completing all steps.</div>
+    </div>
+  </div>
+
+  <a href="https://giftclick.org/aff_c?offer_id=2768&aff_id=170653" class="cta">Continue to Next Step →</a>
+
+  <div class="disclaimer">
+    This site is not affiliated with or endorsed by Hollister. Reward availability, eligibility, and requirements may vary.
+  </div>
 
 </div>
 
 <script>
-const progressBar = document.getElementById("progressBar");
-
-function updateProgress(){
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  progressBar.style.width = percent + "%";
-}
-
-window.addEventListener("scroll", updateProgress);
-window.addEventListener("load", updateProgress);
-
-document.querySelectorAll(".cta").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    progressBar.style.width = "100%";
-  });
-});
-
 document.querySelectorAll(".faq-q").forEach(btn=>{
   btn.addEventListener("click",()=>{
     btn.parentElement.classList.toggle("active");
-    setTimeout(updateProgress, 100);
   });
 });
 </script>
