@@ -19,31 +19,13 @@ body{
   padding:24px 14px 40px;
 }
 
-/* LOGO */
-.logo{
+.logo-text{
   text-align:center;
-  margin-bottom:14px;
-}
-
-.logo img{
-  height:60px;
-}
-
-/* CARD */
-.gift-card{
-  background:#2f69a5;
-  border-radius:18px;
-  height:170px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 24px;
-  box-shadow:0 16px 35px rgba(35,102,169,.22);
-}
-
-.gift-card img{
-  height:55px;
-  filter:brightness(0) invert(1);
+  color:#17213b;
+  font-weight:900;
+  font-size:38px;
+  letter-spacing:4px;
+  margin-bottom:18px;
 }
 
 /* TITLE */
@@ -55,7 +37,6 @@ h1{
   text-align:center;
 }
 
-/* SUBTEXT */
 .sub{
   color:#5f6673;
   font-size:17px;
@@ -64,7 +45,6 @@ h1{
   text-align:center;
 }
 
-/* STEP CARDS */
 .card{
   background:#fff;
   border-radius:18px;
@@ -86,19 +66,12 @@ h1{
   align-items:center;
   justify-content:center;
   font-weight:900;
+  flex-shrink:0;
 }
 
-.card h3{
-  font-size:17px;
-  margin-bottom:5px;
-}
+.card h3{font-size:17px;margin-bottom:5px}
+.card p{font-size:14px;color:#666;line-height:1.35}
 
-.card p{
-  font-size:14px;
-  color:#666;
-}
-
-/* INFO BOX */
 .info{
   background:#fff;
   border-radius:18px;
@@ -107,32 +80,23 @@ h1{
   border:1px solid #d9dde5;
 }
 
-.info h3{
-  font-size:18px;
-  margin-bottom:8px;
-}
+.info h3{font-size:18px;margin-bottom:8px}
+.info p{font-size:15px;color:#666;line-height:1.4}
 
-.info p{
-  font-size:15px;
-  color:#666;
-}
-
-/* CTA */
 .cta{
   display:block;
   width:100%;
-  background:#17213b;
+  background:#000;
   color:#fff;
   text-align:center;
   padding:18px;
-  border-radius:999px;
+  border-radius:18px;
   font-size:20px;
   font-weight:900;
   text-decoration:none;
   margin-top:14px;
 }
 
-/* NOTE */
 .note{
   text-align:center;
   font-size:12px;
@@ -140,7 +104,6 @@ h1{
   margin-top:12px;
 }
 
-/* FAQ */
 .faq{
   background:#fff;
   border-radius:18px;
@@ -178,14 +141,12 @@ h1{
   display:none;
   padding:0 15px 15px;
   font-size:14px;
-  color:#555;
+  color:#344054;
+  line-height:1.45;
 }
 
-.faq-item.active .faq-a{
-  display:block;
-}
+.faq-item.active .faq-a{display:block}
 
-/* DISCLAIMER */
 .disclaimer{
   color:#8b8f99;
   font-size:11px;
@@ -199,22 +160,12 @@ h1{
 
 <div class="page">
 
-  <!-- RELIABLE LOGO -->
-  <div class="logo">
-    <img src="https://logo.clearbit.com/hollisterco.com" alt="Hollister">
-  </div>
+  <div class="logo-text">HOLLISTER</div>
 
-  <!-- CARD -->
-  <div class="gift-card">
-    <img src="https://logo.clearbit.com/hollisterco.com" alt="Hollister">
-  </div>
-
-  <!-- TITLE -->
   <h1>Claim your $500 Hollister Gift Card</h1>
 
   <p class="sub">This quick page explains what to expect on the next step.</p>
 
-  <!-- STEPS -->
   <div class="card">
     <div class="check">✓</div>
     <div>
@@ -239,39 +190,38 @@ h1{
     </div>
   </div>
 
-  <!-- INFO -->
   <div class="info">
     <h3>What happens next?</h3>
     <p>You’ll continue to the next page to begin completing the required steps.</p>
   </div>
 
-  <!-- CTA -->
+  <p class="sub" style="margin-bottom:0;">Tap below to continue and start the steps.</p>
+
   <a href="https://giftclick.org/aff_c?offer_id=2768&aff_id=170653" class="cta">Continue to Next Step →</a>
 
   <p class="note">Eligibility and completion requirements apply.</p>
 
-  <!-- FAQ -->
   <div class="faq">
     <h2>Frequently Asked Questions</h2>
 
-    <div class="faq-item">
-      <button class="faq-q">How long do the deals take? <span>+</span></button>
-      <div class="faq-a">Most deals only take a few minutes to begin.</div>
+    <div class="faq-item active">
+      <button class="faq-q">How long do the deals take? <span>−</span></button>
+      <div class="faq-a">Completion time varies based on the offers shown and how quickly each step is completed.</div>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-q">What are deals? <span>+</span></button>
-      <div class="faq-a">Deals are simple offers or tasks you complete.</div>
+    <div class="faq-item active">
+      <button class="faq-q">What are deals? <span>−</span></button>
+      <div class="faq-a">Deals may include app installs, surveys, subscriptions, or partner trial offers required as part of the process.</div>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-q">How many deals do I have to do? <span>+</span></button>
-      <div class="faq-a">Typically 4–5 deals are required.</div>
+    <div class="faq-item active">
+      <button class="faq-q">How many deals do I have to do? <span>−</span></button>
+      <div class="faq-a">Most users are required to complete 4–5 deals, although the exact path may vary.</div>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-q">When will I receive my reward? <span>+</span></button>
-      <div class="faq-a">Reward timing varies after completion.</div>
+    <div class="faq-item active">
+      <button class="faq-q">When will I receive my reward? <span>−</span></button>
+      <div class="faq-a">After all required steps are completed and verified, you can move forward in the process to claim your reward.</div>
     </div>
   </div>
 
@@ -284,7 +234,9 @@ h1{
 <script>
 document.querySelectorAll(".faq-q").forEach(btn=>{
   btn.addEventListener("click",()=>{
-    btn.parentElement.classList.toggle("active");
+    const item = btn.parentElement;
+    item.classList.toggle("active");
+    btn.querySelector("span").textContent = item.classList.contains("active") ? "−" : "+";
   });
 });
 </script>
